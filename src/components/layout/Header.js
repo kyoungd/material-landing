@@ -2,8 +2,10 @@ import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import LogoIcon from '../../svg/LogoIcon';
 import Button from '../Button';
+import { navigate } from 'gatsby'; //import navigate from gatsby
 
-const Header = () => (
+
+const headerHome = () => (
   <header className="sticky top-0 bg-white shadow">
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
@@ -27,10 +29,38 @@ const Header = () => (
         </AnchorLink>
       </div>
       <div className="hidden md:block">
-        <Button className="text-sm">Start Free Trial</Button>
+        <Button className="text-sm" onClick={() => window.open('https://www.tradesimp.com', '_blank')}>Start Free Trial</Button>
       </div>
     </div>
   </header>
 );
+
+const headerNotHome = () => (
+  <header className="sticky top-0 bg-white shadow">
+    <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
+      <div className="flex items-center text-2xl">
+        <div className="w-12 mr-3">
+          <LogoIcon />
+        </div>
+        TRADESIMP
+      </div>
+      <div className="flex mt-4 sm:mt-0">
+        <a href="#" onClick={() => navigate("/")}>Home</a>
+      </div>
+      <div className="hidden md:block">
+        <Button className="text-sm" onClick={() => window.open('https://www.tradesimp.com', '_blank')}>Start Free Trial</Button>
+      </div>
+    </div>
+  </header>
+)
+
+
+const Header = () => {
+  const fullurl = location.href ? location.href : '';
+  const url = new URL(fullurl);
+  console.log(url.pathname);
+
+  return url.pathname === '/' ? headerHome() : headerNotHome();
+}
 
 export default Header;
