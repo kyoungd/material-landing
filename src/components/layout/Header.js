@@ -55,12 +55,9 @@ const headerNotHome = () => (
 )
 
 
-const Header = () => {
-  const fullurl = location.href ? location.href : '';
-  const url = new URL(fullurl);
-  console.log(url.pathname);
+const Header = ({location}) => {
 
-  return url.pathname === '/' ? headerHome() : headerNotHome();
+  return location.pathname === '/' ? headerHome() : headerNotHome();
 }
 
 export default Header;

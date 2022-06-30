@@ -3,8 +3,8 @@ import Button from '../components/Button';
 import Layout from '../components/layout/Layout';
 import { navigate } from 'gatsby'; //import navigate from gatsby
 
-const Privacy = () => (
-    <Layout>
+const Privacy = ({location}) => (
+    <Layout location={location}>
         <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg privacy">
             <h3 className="text-5xl font-semibold">GENERAL TERMS OF USE</h3>
             <p className="mt-8 text-xl font-light">

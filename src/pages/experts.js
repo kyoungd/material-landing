@@ -11,13 +11,15 @@ import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 
-const Index = ({location}) => {
+const PageExperts = ({location}) => {
   const [isOpenMyStory, setOpenMyStory] = useState(false);
   const [isOpenHighQualityTrade, setOpenHighQualityTrade] = useState(false);
   const [isOpenTradeWithExperts, setOpenTradeWithExperts] = useState(false);
   const [isOpenCustomAI, setOpenCustomAI] = useState(false);
   const [isOpenLearning, setOpenLearning] = useState(false);
   const [isOpenLanding, setOpenLanding] = useState(false);
+  const [isOpenAdditionalWork, setOpenAdditionalWork] = useState(false);
+  const [isOpenWhyCustomAI, setOpenWhyCustomAI] = useState(false);
 
   return (
     <Layout location={location}>
@@ -26,28 +28,28 @@ const Index = ({location}) => {
           channel="youtube"
           autoplay={false}
           isOpen={isOpenMyStory}
-            videoId="_mhWwh1Y3vQ"
+          videoId="_S4VTmRvEqw"
           onClose={() => setOpenMyStory(false)}
         />
         <ModalVideo
           channel="youtube"
           autoplay={false}
           isOpen={isOpenHighQualityTrade}
-          videoId="LtSP17RCwlA"
+          videoId="bxOUT3cQ7NA"
           onClose={() => setOpenHighQualityTrade(false)}
         />
         <ModalVideo
           channel="youtube"
           autoplay={false}
           isOpen={isOpenTradeWithExperts}
-          videoId="gehEckw_skE"
+          videoId="HsFJAP_xJ_c"
           onClose={() => setOpenTradeWithExperts(false)}
         />
         <ModalVideo
           channel="youtube"
           autoplay={false}
           isOpen={isOpenCustomAI}
-          videoId="czf3qiHuxyY"
+          videoId="Pf16fCWNTBo"
           onClose={() => setOpenCustomAI(false)}
         />
         <ModalVideo
@@ -64,17 +66,33 @@ const Index = ({location}) => {
           videoId="hcPNtFwSA0M"
           onClose={() => setOpenLanding(false)}
         />
+        <ModalVideo
+          channel="youtube"
+          autoplay={false}
+          isOpen={isOpenAdditionalWork}
+          videoId="Sbl5yVksw5c"
+          onClose={() => setOpenAdditionalWork(false)}
+        />
+        <ModalVideo
+          channel="youtube"
+          autoplay={false}
+          isOpen={isOpenWhyCustomAI}
+          videoId="oxJ_ePLwhEQ"
+          onClose={() => setOpenWhyCustomAI(false)}
+        />
         <div className="container mx-auto px-8 lg:flex">
           <div className="text-center lg:text-left lg:w-1/2">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
-              Next Generation Hybrid Trading
+              BECOME OUR EXPERT
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Trade with focus, discipline and confidence.  Eliminate mistakes and maximize profits.
-              Work less, earn more.
+              Earn consistent monthly revenue.
+              No cost to you.
+              Little additional work.
+              Help others to succeed.
             </p>
             <p className="mt-8 md:mt-12">
-              <Button size="lg" onClick={() => setOpenMyStory(true)}>My Story</Button>
+              <Button size="lg" onClick={() => setOpenMyStory(true)}>Our Story</Button>
             </p>
             <p className="mt-4 text-gray-600">Why TradeSimp?</p>
           </div>
@@ -89,28 +107,30 @@ const Index = ({location}) => {
           <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
             <div className="flex-1 px-3">
               <Card className="mb-8" onClick={() => setOpenHighQualityTrade(true)}>
-                <p className="font-semibold text-xl">High Quality Trades</p>
+                <p className="font-semibold text-xl">Monthly Reveneue</p>
                 <p className="mt-4">
-                  Continuously search for quality trade opportunities in real time.  Using a
-                  sophisticated AI, we can find the best trade opportunities for you.
+                  Instead of making one-time payment upon sign-up, you can earn monthly revenue.
+                  It is 20% of the total revenue, and it is directly proportional to the number
+                  of subscribers to your channel.
                 </p>
               </Card>
             </div>
             <div className="flex-1 px-3">
               <Card className="mb-8" onClick={() => setOpenTradeWithExperts(true)}>
-                <p className="font-semibold text-xl">Trade With Experts</p>
+                <p className="font-semibold text-xl">Zero Cost</p>
                 <p className="mt-4">
-                  Trade with the best traders in the industry.  
-                  We have a team of experts who can help you make the best decisions.
+                  There is no cost to set up, create a custom AI, or run a channel.
+                  There is no cost to you.
                 </p>
               </Card>
             </div>
             <div className="flex-1 px-3">
               <Card className="mb-8" onClick={() => setOpenCustomAI(true)}>
-                <p className="font-semibold text-xl">Customize AI</p>
+                <p className="font-semibold text-xl">Helping others</p>
                 <p className="mt-4">
-                  Take your trading to the next level.
-                  Let us create a customize AI for you to use on your trade.
+                  Trading is science and art.  The science part is handled is not hard.
+                  Our AI, and trading technique helps.  The art part is handled by you.
+                  You can help your subscribers succeed.
                 </p>
               </Card>
             </div>
@@ -121,13 +141,16 @@ const Index = ({location}) => {
         id="services"
         primarySlot={
           <div className="lg:pr-32 xl:pr-48">
-            <h3 className="text-3xl font-semibold leading-tight">The Right Trade</h3>
+            <h3 className="text-3xl font-semibold leading-tight">
+              <a href="#" onClick={() => setOpenAdditionalWork(true)} >
+              Little Additional Work
+              </a>
+            </h3>
             <p className="mt-8 text-xl font-light leading-relaxed">
-              Trading is easy, but waiting for the right setup was difficult.  
-              With scanning services, I got notifications too early, too late or on the wrong setup.  
-              I missed good trades.  I got impatient and entered trades I should not have.
-              That is why I created a custom AI to notify me only when an asset has the right setup.
-              I get notification for an exact setup, and eliminate wasted time waiting and catch winners.
+              You should not trade more or less than you normally do.
+              Only additional work is that you explain why you are taking the trade, or not.
+              There is no obligation to number of hours you trade.
+              It is quality that is important, not quantity.
             </p>
           </div>
         }
@@ -138,16 +161,15 @@ const Index = ({location}) => {
         primarySlot={
           <div className="lg:pl-32 xl:pl-48">
             <h3 className="text-3xl font-semibold leading-tight">
-              Trade with experts
+              <a href="#" onClick={() => setOpenWhyCustomAI(true)} >
+                Why use custom AI
+              </a>
             </h3>
             <p className="mt-8 text-xl font-light leading-relaxed">
-              It is very difficult to master the complex variables of successful trade.
-              There are only 1 or 2 techniques that an expert trader uses regularly.
-              However, that is enough to retire.
-              We bring you, experts and community together in a video conferencing.
-              Every trade is reviewed by experts and discussed in the community.
-              You can follow their suggestion or go your own way.
-              It will help you reduce mistakes, be more disciplined and consistent.
+              The custom AI is designed to reduce work for everyone, including you.
+              When the AI finds a stock to trade, it notifies everyone.
+              Everyone is looking at the same trade, at the same time, applying the same trading technqiue.
+              And it has a good chance of being a high-quality trade because AI is better at pattern recognition.
             </p>
           </div>
         }
@@ -157,14 +179,16 @@ const Index = ({location}) => {
         primarySlot={
           <div className="lg:pr-32 xl:pr-48">
             <h3 className="text-3xl font-semibold leading-tight">
-              Discipline and consistent
+              Why trade with expert
             </h3>
             <p className="mt-8 text-xl font-light leading-relaxed">
-              Our custom AI will alert you when the trade setup is complete.
-              It tells you what pattern and what time frame.
-              It allows you to focus on a single trade with a single technique.  
-              There is no guessing here.  
-              It eliminates distractions and makes it easier for you to be disciplined and consistent.
+              It is very difficult to master the complex variables of successful trade.
+              There are only 1 or 2 techniques that an expert trader uses regularly.
+              However, that is enough to retire on.
+              We bring you, experts and community together in a video conferencing.
+              Every trade is reviewed by an expert.
+              The subscribers can follow your suggestion or go their own way.
+              It will help them reduce mistakes, be more disciplined and consistent.
             </p>
           </div>
         }
@@ -188,7 +212,7 @@ const Index = ({location}) => {
       </section>
       <section id="testimonials" className="py-20 lg:pb-40 lg:pt-48">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-semibold">Types of Traders</h2>
+          <h2 className="text-3xl lg:text-5xl font-semibold">Types of Subscribers</h2>
           <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
             <div className="flex-1 px-3">
               <Card className="mb-8" onClick={() => setOpenHighQualityTrade(true)}>
@@ -233,4 +257,4 @@ const Index = ({location}) => {
   );
 }
 
-export default Index;
+export default PageExperts;

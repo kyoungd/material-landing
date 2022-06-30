@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card = ({ className, onClick, children }) => (
-  <a class="card1" href="#">
+  <a className="card1" href="#">
     <div
       className={`p-12 rounded-lg border border-solid border-gray-200 ${className}`}
       onClick={onClick}
